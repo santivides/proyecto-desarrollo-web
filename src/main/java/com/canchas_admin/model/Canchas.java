@@ -7,11 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.boot.jackson.JsonObjectSerializer;
-
-import com.amazonaws.util.json.JSONArray;
-import com.amazonaws.util.json.JSONObject;
-
 @Entity
 public class Canchas {
 
@@ -115,25 +110,5 @@ public class Canchas {
     }
 
 
-    public JSONObject toJSON() throws Exception {
-		JSONObject jcanchas = new JSONObject();
-		jcanchas.put("id", getId());
-		jcanchas.put("nombre", getNombre());
-		jcanchas.put("descripcion", getDescripcion());
-        jcanchas.put("imagen", getImageUrl());
-		return jcanchas;
-	}
-	
-	public static JSONArray toJSONArray( Iterable<Canchas>canchas ) throws Exception {
-		JSONArray jcanchas = new JSONArray();
-		Iterator<Canchas> icanchas = canchas.iterator();
-		while( icanchas.hasNext() ) {
-			Canchas canchas = icanchas.next();
-			jcanchas.put( canchas.toJSON() );
-		}
-		
-		return jcanchas;
-	}
-    
 }
 
