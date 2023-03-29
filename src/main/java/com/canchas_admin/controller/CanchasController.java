@@ -33,7 +33,7 @@ public class CanchasController {
     private canchasServices canchaService;
 
     @CrossOrigin
-    @GetMapping({"/canchas"})
+    @GetMapping(value =  "/Canchas", produces ={MediaType.APPLICATION_JSON_VALUE})
     public String listarCanchas(Model model){
         model.addAttribute("canchas", canchaService.listar());
         return "canchas";
@@ -52,13 +52,6 @@ public class CanchasController {
     // public Canchas getcanchaById(@PathVariable Long id){
     //     return canchaService.getcanchaById(id);
     // }
-
-    @CrossOrigin
-    @PostMapping(value = "/newcancha",produces = {MediaType.APPLICATION_JSON_VALUE})
-    public void createcancha(@RequestBody Canchas cancha) {
-        canchaService.newcancha(cancha);
-    }
-
     // @CrossOrigin
     // @PutMapping(value = "/updatecancha/{id}",produces = {MediaType.APPLICATION_JSON_VALUE})
     // public void updatecancha(@PathVariable(value = "id") Long id, @RequestBody cancha herramienta) {

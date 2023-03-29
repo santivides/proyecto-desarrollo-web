@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
+
 @Entity
 public class Administrador {
 
@@ -36,8 +37,7 @@ public class Administrador {
 
     }
 
-    public void User(Long id, String userName, String pswd, String token) {
-        this.id = id;
+    public void setGeneral(Long id, String userName, String pswd, String token) {
         this.userName = userName;
         this.pswd = pswd;
         this.token = token;

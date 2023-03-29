@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 @Entity
 @Table(name = "canchas")
 public class Canchas {
@@ -63,7 +66,6 @@ public class Canchas {
     }
 
     public void cancha(Long id, String nombre, String descripcion, String imageUrl, Long precio_referencia, String ciudad) {
-        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imageUrl = imageUrl;
